@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticketing - Luxury Travel Co.</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Luxury Travel Co.</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="experiences.html">Experiences</a></li>
+            <li><a href="ticketing.html">Ticketing</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="content">
+        <h1 class="fade-in">Luxury Ticketing</h1>
+        <p class="slide-in">Book your exclusive flights with us.</p>
+        <form id="ticketingForm" class="ticketing-form fade-in" data-delay="0.2">
+            <input type="text" id="ticketName" placeholder="Full Name" class="form-input slide-in" data-delay="0.4" required>
+            <input type="email" id="ticketEmail" placeholder="Email" class="form-input slide-in" data-delay="0.6" required>
+            <select id="ticketOrigin" class="form-input slide-in" data-delay="0.8" required>
+                <option value="">Select Origin</option>
+                <option value="NYC">New York (NYC)</option>
+                <option value="LAX">Los Angeles (LAX)</option>
+                <option value="LHR">London (LHR)</option>
+            </select>
+            <select id="ticketDestination" class="form-input slide-in" data-delay="1.0" required>
+                <option value="">Select Destination</option>
+                <option value="Santorini">Santorini, Greece</option>
+                <option value="Maldives">Maldives</option>
+                <option value="Serengeti">Serengeti, Tanzania</option>
+                <option value="Tokyo">Tokyo, Japan</option>
+            </select>
+            <input type="date" id="ticketDate" class="form-input slide-in" data-delay="1.2" required>
+            <button type="submit" class="cta-button slide-in" data-delay="1.4">Book Ticket</button>
+        </form>
+        <div id="ticketingFeedback" class="feedback slide-in"></div>
+    </section>
+
+    <div class="chatbot">
+        <div class="chatbot-header">Travel Assistant</div>
+        <div class="chatbot-body" id="chatbotBody"></div>
+        <input type="text" id="chatbotInput" placeholder="Ask me anything...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <footer>
+        <p>© 2025 Luxury Travel Co. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init('6I-bozNFRyXMC6_8Z'); // Your User ID
+        })();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

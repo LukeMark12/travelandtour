@@ -22,15 +22,14 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
-    setupForm('conciergeForm', 'conciergeFeedback', 'template_os64tac');
+    setupTicketingForm('ticketingForm', 'ticketingFeedback', 'template_os64tac');
     setupForm('contactForm', 'contactFeedback', 'template_os64tac');
 });
 
-// Form Setup Function with EmailJS
-function setupForm(formId, feedbackId, templateId) {
+// Ticketing Form Setup
+function setupTicketingForm(formId, feedbackId, templateId) {
     const form = document.getElementById(formId);
     const feedback = document.getElementById(feedbackId);
-    const itineraryText = document.getElementById('itineraryText');
 
     if (form) {
         const inputs = form.querySelectorAll('.form-input');
@@ -42,12 +41,59 @@ function setupForm(formId, feedbackId, templateId) {
 
         form.addEventListener('submit', (e) => {
             e.preventDefault();
-            const name = form.querySelector('input[type="text"]').value.trim();
-            const email = form.querySelector('input[type="email"]').value.trim();
-            const message = form.querySelector('textarea').value.trim();
+            const name = form.querySelector('#ticketName').value.trim();
+            const email = form.querySelector('#ticketEmail').value.trim();
+            const origin = form.querySelector('#ticketOrigin').value;
+            const destination = form.querySelector('#ticketDestination').value;
+            const date = form.querySelector('#ticketDate').value;
+
+            if (validateTicketingForm(name, email, origin, destination, date)) {
+                feedback.textContent = 'Processing your booking...';
+                feedback.style.color = '#d4af37';
+
+                emailjs.send('service_jpmakbm', templateId, {
+                    from_name: name,
+                    reply_to: email,
+                    message: `Booking Request: Flight from ${origin} to ${destination} on ${date}`
+                })
+                .then(() => {
+                    feedback.textContent = `Thank you, ${name}! Your booking request for ${destination} on ${date} has been sent. Check ${email} for confirmation.`;
+                    feedback.style.color = '#d4af37';
+                    form.reset();
+                }, (error) => {
+                    feedback.textContent = 'Oops! Something went wrong. Check the console for details.';
+                    feedback.style.color = '#ff5555';
+                    console.error('EmailJS Error Details:', error.text || error);
+                });
+            } else {
+                feedback.textContent = 'Please fill out all fields correctly.';
+                feedback.style.color = '#ff5555';
+            }
+        });
+    }
+}
+
+// Contact Form Setup (unchanged from previous)
+function setupForm(formId, feedbackId, templateId) {
+    const form = document.getElementById(formId);
+    const feedback = document.getElementById(feedbackId);
+
+    if (form) {
+        const inputs = form.querySelectorAll('.form-input');
+        inputs.forEach(input => {
+            input.addEventListener('input', () => {
+                validateInput(input);
+            });
+        });
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = form.querySelector('#contactName').value.trim();
+            const email = form.querySelector('#contactEmail').value.trim();
+            const message = form.querySelector('#contactMessage').value.trim();
 
             if (validateForm(name, email, message)) {
-                feedback.textContent = 'Sending your request...';
+                feedback.textContent = 'Sending your message...';
                 feedback.style.color = '#d4af37';
 
                 emailjs.send('service_jpmakbm', templateId, {
@@ -56,13 +102,8 @@ function setupForm(formId, feedbackId, templateId) {
                     message: message
                 })
                 .then(() => {
-                    feedback.textContent = `Thank you, ${name}! Your request has been sent. Check ${email} for confirmation soon.`;
+                    feedback.textContent = `Thank you, ${name}! Your message has been sent. Check ${email} for confirmation soon.`;
                     feedback.style.color = '#d4af37';
-
-                    if (itineraryText) {
-                        itineraryText.textContent = generateItinerary(message);
-                    }
-
                     form.reset();
                 }, (error) => {
                     feedback.textContent = 'Oops! Something went wrong. Check the console for details.';
@@ -81,30 +122,21 @@ function validateInput(input) {
     if (input.type === 'email') {
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         input.style.borderColor = emailPattern.test(input.value) ? '#d4af37' : '#ff5555';
+    } else if (input.tagName === 'SELECT') {
+        input.style.borderColor = input.value ? '#d4af37' : '#ff5555';
     } else {
         input.style.borderColor = input.value.trim() ? '#d4af37' : '#ff5555';
     }
 }
 
+function validateTicketingForm(name, email, origin, destination, date) {
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return name.length > 0 && emailPattern.test(email) && origin && destination && date;
+}
+
 function validateForm(name, email, message) {
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return name.length > 0 && emailPattern.test(email) && message.length > 0;
-}
-
-function generateItinerary(message) {
-    const lowerMsg = message.toLowerCase();
-    let destination = 'a luxurious destination';
-    let experience = 'an exclusive experience';
-
-    if (lowerMsg.includes('santorini')) destination = 'Santorini, Greece';
-    if (lowerMsg.includes('maldives')) destination = 'the Maldives';
-    if (lowerMsg.includes('serengeti')) destination = 'the Serengeti, Tanzania';
-    if (lowerMsg.includes('tokyo')) destination = 'Tokyo, Japan';
-    if (lowerMsg.includes('jet') || lowerMsg.includes('flight')) experience = 'a private jet escape';
-    if (lowerMsg.includes('food') || lowerMsg.includes('gourmet')) experience = 'a gourmet getaway';
-    if (lowerMsg.includes('spa') || lowerMsg.includes('wellness')) experience = 'a wellness retreat';
-
-    return `Day 1: Arrive in ${destination}. Day 2: Enjoy ${experience}. Day 3: Relax and explore at your leisure. (Full details will be emailed!)`;
 }
 
 // Chatbot
@@ -129,8 +161,8 @@ function sendMessage() {
 
 function getBotResponse(message) {
     const lowerMsg = message.toLowerCase();
-    if (lowerMsg.includes('destination')) return 'Explore our luxury destinations like Santorini or the Maldives!';
-    if (lowerMsg.includes('experience')) return 'Try our Private Jet Escapes or Gourmet Getaways!';
-    if (lowerMsg.includes('help')) return 'I’m here to assist! What do you need help with?';
+    if (lowerMsg.includes('ticket') || lowerMsg.includes('booking')) return 'Head to our Ticketing page to book your luxury flight!';
+    if (lowerMsg.includes('destination')) return 'We offer flights to Santorini, Maldives, Serengeti, and more!';
+    if (lowerMsg.includes('help')) return 'I’m here to assist! Need help with booking?';
     return 'I’d love to help! Could you tell me more?';
 }

@@ -231,3 +231,20 @@ footer {
     background-color: #1a2a44;
     color: #fff;
 }
+
+/* Ticketing Form */
+.ticketing-form {
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+.ticketing-form select {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #d4af37;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fff;
+}
