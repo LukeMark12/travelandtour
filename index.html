@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Travel Co.</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Luxury Travel Co.</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="experiences.html">Experiences</a></li>
+            <li><a href="concierge.html">Concierge</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="fade-in">Travel Beyond the Ordinary</h1>
+            <p class="slide-in">Curated luxury journeys for the elite traveler.</p>
+            <a href="concierge.html" class="cta-button slide-in">Design Your Journey</a>
+        </div>
+    </section>
+
+    <section class="featured">
+        <h2 class="fade-in">Featured Destinations</h2>
+        <div class="destination-grid">
+            <div class="destination-card slide-in" data-delay="0.2">
+                <h3>Santorini</h3>
+                <p>Indulge in private villas overlooking the Aegean Sea.</p>
+                <a href="destinations.html" class="card-link">Explore</a>
+            </div>
+            <div class="destination-card slide-in" data-delay="0.4">
+                <h3>Maldives</h3>
+                <p>Unwind on a private yacht amidst turquoise waters.</p>
+                <a href="destinations.html" class="card-link">Explore</a>
+            </div>
+            <div class="destination-card slide-in" data-delay="0.6">
+                <h3>Serengeti</h3>
+                <p>Luxury safaris in the heart of the wild.</p>
+                <a href="destinations.html" class="card-link">Explore</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chatbot -->
+    <div class="chatbot">
+        <div class="chatbot-header">Travel Assistant</div>
+        <div class="chatbot-body" id="chatbotBody"></div>
+        <input type="text" id="chatbotInput" placeholder="Ask me anything...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <footer>
+        <p>© 2025 Luxury Travel Co. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

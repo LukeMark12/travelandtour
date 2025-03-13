@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Luxury Travel Co.</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Luxury Travel Co.</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="experiences.html">Experiences</a></li>
+            <li><a href="concierge.html">Concierge</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="content">
+        <h1 class="fade-in">Get in Touch</h1>
+        <p class="slide-in">We’re here to assist you 24/7.</p>
+        <form class="contact-form fade-in" data-delay="0.2">
+            <input type="text" placeholder="Name" class="form-input slide-in" data-delay="0.4">
+            <input type="email" placeholder="Email" class="form-input slide-in" data-delay="0.6">
+            <textarea placeholder="Your message..." class="form-input slide-in" data-delay="0.8"></textarea>
+            <button type="submit" class="cta-button slide-in" data-delay="1.0">Send Message</button>
+        </form>
+        <p class="slide-in" data-delay="1.2">Or call us at: <strong>+1-800-LUXURY</strong></p>
+    </section>
+
+    <!-- Chatbot -->
+    <div class="chatbot">
+        <div class="chatbot-header">Travel Assistant</div>
+        <div class="chatbot-body" id="chatbotBody"></div>
+        <input type="text" id="chatbotInput" placeholder="Ask me anything...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <footer>
+        <p>© 2025 Luxury Travel Co. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

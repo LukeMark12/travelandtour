@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiences - Luxury Travel Co.</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Luxury Travel Co.</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="experiences.html">Experiences</a></li>
+            <li><a href="concierge.html">Concierge</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="content">
+        <h1 class="fade-in">Unforgettable Experiences</h1>
+        <p class="slide-in">Tailored adventures for the sophisticated traveler.</p>
+        <div class="experience-grid">
+            <div class="experience-card slide-in" data-delay="0.2">
+                <h3>Private Jet Escapes</h3>
+                <p>Fly in style to your dream destination.</p>
+                <a href="concierge.html" class="card-link">Plan Now</a>
+            </div>
+            <div class="experience-card slide-in" data-delay="0.4">
+                <h3>Gourmet Getaways</h3>
+                <p>Savor world-class cuisine in stunning locales.</p>
+                <a href="concierge.html" class="card-link">Plan Now</a>
+            </div>
+            <div class="experience-card slide-in" data-delay="0.6">
+                <h3>Wellness Retreats</h3>
+                <p>Rejuvenate in luxury spas and nature escapes.</p>
+                <a href="concierge.html" class="card-link">Plan Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chatbot -->
+    <div class="chatbot">
+        <div class="chatbot-header">Travel Assistant</div>
+        <div class="chatbot-body" id="chatbotBody"></div>
+        <input type="text" id="chatbotInput" placeholder="Ask me anything...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <footer>
+        <p>© 2025 Luxury Travel Co. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

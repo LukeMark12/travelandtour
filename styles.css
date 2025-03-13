@@ -1,0 +1,233 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #1a2a44;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #d4af37;
+    transform: scale(1.1);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: url('https://via.placeholder.com/1920x1080') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-content {
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.cta-button {
+    padding: 15px 30px;
+    background-color: #d4af37;
+    color: #1a2a44;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #b8962e;
+    transform: translateY(-5px);
+}
+
+/* Featured/Content Section */
+.featured, .content {
+    padding: 100px 50px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.featured h2, .content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.destination-grid, .experience-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.destination-card, .experience-card {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #d4af37;
+    border-radius: 5px;
+    width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.destination-card:hover, .experience-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #d4af37;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.card-link:hover {
+    color: #b8962e;
+}
+
+/* Forms */
+.concierge-form, .contact-form {
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+.form-input {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #d4af37;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+textarea.form-input {
+    height: 150px;
+    resize: none;
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+.slide-in {
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Chatbot */
+.chatbot {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    background-color: #1a2a44;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.chatbot-header {
+    padding: 10px;
+    background-color: #d4af37;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+    font-size: 18px;
+}
+
+.chatbot-body {
+    padding: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.chatbot input {
+    width: 70%;
+    padding: 10px;
+    border: none;
+    border-radius: 0 0 0 10px;
+}
+
+.chatbot button {
+    width: 30%;
+    padding: 10px;
+    border: none;
+    background-color: #d4af37;
+    color: #1a2a44;
+    border-radius: 0 0 10px 0;
+    cursor: pointer;
+}
+
+.chatbot button:hover {
+    background-color: #b8962e;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1a2a44;
+    color: #fff;
+}
