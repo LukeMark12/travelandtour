@@ -29,6 +29,13 @@ body {
     font-weight: bold;
 }
 
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+}
+
 .nav-links {
     list-style: none;
     display: flex;
@@ -273,8 +280,8 @@ body {
 }
 
 .content {
-    min-height: calc(100vh - 100px); /* Adjust based on navbar/footer height */
-    padding-bottom: 60px; /* Space for footer */
+    min-height: calc(100vh - 100px);
+    padding-bottom: 60px;
 }
 
 .chatbot {
@@ -388,4 +395,112 @@ footer {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     min-height: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #1a1a1a;
+        flex-direction: column;
+        padding: 20px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .hero, .experience-hero {
+        height: 50vh;
+    }
+
+    .hero h1, .experience-hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p, .experience-hero p {
+        font-size: 16px;
+    }
+
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .destination-grid, .highlight-grid, .experience-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .destination-card, .highlight-card, .experience-item {
+        padding: 15px;
+    }
+
+    .card-image, .experience-image {
+        height: 150px;
+    }
+
+    .destination-card h3, .highlight-card h3, .experience-text h2 {
+        font-size: 20px;
+    }
+
+    .destination-card p, .highlight-card p, .experience-text p {
+        font-size: 14px;
+    }
+
+    .ticketing-form, .contact-form {
+        max-width: 100%;
+        margin: 20px;
+    }
+
+    .ticketing-form select, .ticketing-form input[type="date"], .contact-form input, .contact-form textarea {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .cta-button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .chatbot {
+        width: 200px;
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .chatbot input {
+        width: calc(100% - 50px);
+        padding: 8px;
+    }
+
+    .chatbot button {
+        width: 50px;
+        padding: 8px;
+    }
+
+    .featured, .highlights, .experience-details {
+        padding: 40px 10px;
+    }
+
+    .featured h2, .highlights h2, .experience-details h2 {
+        font-size: 28px;
+    }
 }

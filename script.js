@@ -24,6 +24,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setupTicketingForm('ticketingForm', 'ticketingFeedback', 'template_os64tac');
     setupForm('contactForm', 'contactFeedback', 'template_os64tac');
+
+    // Mobile Menu Toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
 });
 
 // Ticketing Form Setup
