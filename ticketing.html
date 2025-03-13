@@ -9,7 +9,7 @@
 <body>
     <nav class="navbar">
         <div class="logo">Luxury Travel Co.</div>
-        <div class="menu-toggle">&#9776;</div>
+        <div class="menu-toggle">☰</div>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="destinations.html">Destinations</a></li>
@@ -25,30 +25,46 @@
         <form id="ticketingForm" class="ticketing-form fade-in" data-delay="0.2">
             <input type="text" id="ticketName" placeholder="Full Name" class="form-input slide-in" data-delay="0.4" required>
             <input type="email" id="ticketEmail" placeholder="Email" class="form-input slide-in" data-delay="0.6" required>
-            <select id="ticketOrigin" class="form-input slide-in" data-delay="0.8" required>
+            <input type="tel" id="ticketPhone" placeholder="Phone Number" class="form-input slide-in" data-delay="0.8" required>
+            <select id="ticketOrigin" class="form-input slide-in" data-delay="1.0" required>
                 <option value="">Select Origin</option>
                 <option value="NYC">New York (NYC)</option>
                 <option value="LAX">Los Angeles (LAX)</option>
                 <option value="LHR">London (LHR)</option>
             </select>
-            <select id="ticketDestination" class="form-input slide-in" data-delay="1.0" required>
+            <select id="ticketDestination" class="form-input slide-in" data-delay="1.2" required>
                 <option value="">Select Destination</option>
                 <option value="Santorini">Santorini, Greece</option>
                 <option value="Maldives">Maldives</option>
                 <option value="Serengeti">Serengeti, Tanzania</option>
                 <option value="Tokyo">Tokyo, Japan</option>
             </select>
-            <input type="date" id="ticketDate" class="form-input slide-in" data-delay="1.2" required>
-            <button type="submit" class="cta-button slide-in" data-delay="1.4">Book Ticket</button>
+            <input type="date" id="ticketDate" class="form-input slide-in" data-delay="1.4" required>
+            <button type="submit" class="cta-button slide-in" data-delay="1.6">Book Ticket</button>
         </form>
         <div id="ticketingFeedback" class="feedback slide-in"></div>
     </section>
 
-    <div class="chatbot">
-        <div class="chatbot-header">Travel Assistant</div>
-        <div class="chatbot-body" id="chatbotBody"></div>
-        <input type="text" id="chatbotInput" placeholder="Ask me anything...">
-        <button onclick="sendMessage()">Send</button>
+    <div class="chat-button" onclick="toggleChat()">Chat</div>
+    <div class="chat-window" id="chatWindow">
+        <div class="chat-header">
+            Travel Assistant
+            <select id="languageSelect" onchange="changeLanguage()">
+                <option value="en">English</option>
+                <option value="my">မြန်မာ (Burmese)</option>
+            </select>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <div class="chat-message bot">
+                <div class="chat-bubble bot">Hello! I’m here to assist with your luxury travel. What can I help you with?</div>
+            </div>
+            <div class="chat-options" id="chatOptions">
+                <span class="chat-option" onclick="showResponse('ticketing')">How do I book a ticket?</span>
+                <span class="chat-option" onclick="showResponse('destinations')">What destinations do you offer?</span>
+                <span class="chat-option" onclick="showResponse('experiences')">Tell me about experiences</span>
+                <span class="chat-option" onclick="showResponse('contact')">How can I contact support?</span>
+            </div>
+        </div>
     </div>
 
     <footer>

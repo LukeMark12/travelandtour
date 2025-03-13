@@ -56,12 +56,27 @@
         </div>
     </section>
 
-    <div class="chatbot">
-        <div class="chatbot-header">Travel Assistant</div>
-        <div class="chatbot-body" id="chatbotBody"></div>
-        <input type="text" id="chatbotInput" placeholder="Ask me anything...">
-        <button onclick="sendMessage()">Send</button>
+    <div class="chat-button" onclick="toggleChat()">Chat</div>
+<div class="chat-window" id="chatWindow">
+    <div class="chat-header">
+        Travel Assistant
+        <select id="languageSelect" onchange="changeLanguage()">
+            <option value="en">English</option>
+            <option value="my">မြန်မာ (Burmese)</option>
+        </select>
     </div>
+    <div class="chat-body" id="chatBody">
+        <div class="chat-message bot">
+            <div class="chat-bubble bot">Hello! I’m here to assist with your luxury travel. What can I help you with?</div>
+        </div>
+        <div class="chat-options" id="chatOptions">
+            <span class="chat-option" onclick="showResponse('ticketing')">How do I book a ticket?</span>
+            <span class="chat-option" onclick="showResponse('destinations')">What destinations do you offer?</span>
+            <span class="chat-option" onclick="showResponse('experiences')">Tell me about experiences</span>
+            <span class="chat-option" onclick="showResponse('contact')">How can I contact support?</span>
+        </div>
+    </div>
+</div>
 
     <footer>
         <p>© 2025 Luxury Travel Co. All rights reserved.</p>
