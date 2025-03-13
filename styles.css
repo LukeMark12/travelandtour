@@ -60,7 +60,18 @@ body {
     color: #fff;
 }
 
-.hero-overlay {
+.experience-hero {
+    height: 60vh;
+    background: url('https://via.placeholder.com/1920x1080?text=Experiences') no-repeat center center/cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-overlay, .experience-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -69,18 +80,18 @@ body {
     background: rgba(0, 0, 0, 0.5);
 }
 
-.hero-content {
+.hero-content, .experience-content {
     position: relative;
     z-index: 1;
 }
 
-.hero h1 {
+.hero h1, .experience-hero h1 {
     font-size: 60px;
     margin-bottom: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
-.hero p {
+.hero p, .experience-hero p {
     font-size: 24px;
     margin-bottom: 30px;
 }
@@ -101,19 +112,19 @@ body {
     transform: scale(1.05);
 }
 
-.featured, .highlights {
+.featured {
     padding: 80px 20px;
     text-align: center;
     background-color: #fff;
 }
 
-.featured h2, .highlights h2 {
+.featured h2 {
     font-size: 36px;
     margin-bottom: 40px;
     color: #1a1a1a;
 }
 
-.destination-grid, .highlight-grid {
+.destination-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
@@ -121,7 +132,7 @@ body {
     margin: 0 auto;
 }
 
-.destination-card, .highlight-card {
+.destination-card {
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 10px;
@@ -129,7 +140,7 @@ body {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.destination-card:hover, .highlight-card:hover {
+.destination-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
@@ -142,13 +153,13 @@ body {
     margin-bottom: 15px;
 }
 
-.destination-card h3, .highlight-card h3 {
+.destination-card h3 {
     font-size: 24px;
     margin-bottom: 10px;
     color: #1a1a1a;
 }
 
-.destination-card p, .highlight-card p {
+.destination-card p {
     font-size: 16px;
     color: #666;
 }
@@ -166,6 +177,106 @@ body {
     color: #b8932d;
 }
 
+.highlights {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.highlights h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #1a1a1a;
+}
+
+.highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.highlight-card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.highlight-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.highlight-card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #1a1a1a;
+}
+
+.highlight-card p {
+    font-size: 16px;
+    color: #666;
+}
+
+.experience-details {
+    padding: 80px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.experience-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.experience-item {
+    max-width: 600px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.experience-item:hover {
+    transform: translateY(-10px);
+}
+
+.experience-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.experience-text {
+    padding: 20px;
+    text-align: left;
+}
+
+.experience-text h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #1a1a1a;
+}
+
+.experience-text p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.content {
+    min-height: calc(100vh - 100px); /* Adjust based on navbar/footer height */
+    padding-bottom: 60px; /* Space for footer */
+}
+
 .chatbot {
     position: fixed;
     bottom: 20px;
@@ -175,6 +286,8 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    z-index: 1000;
+    max-height: 400px;
 }
 
 .chatbot-header {
@@ -215,6 +328,10 @@ footer {
     color: #fff;
     text-align: center;
     padding: 20px;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    clear: both;
 }
 
 /* Animations */
@@ -257,6 +374,12 @@ footer {
     border-radius: 5px;
     font-family: 'Montserrat', sans-serif;
     background-color: #fff;
+}
+
+/* Contact Form */
+.contact-form {
+    max-width: 600px;
+    margin: 40px auto;
 }
 
 /* Feedback Styling */

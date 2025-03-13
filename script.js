@@ -73,7 +73,7 @@ function setupTicketingForm(formId, feedbackId, templateId) {
     }
 }
 
-// Contact Form Setup (unchanged from previous)
+// Contact Form Setup
 function setupForm(formId, feedbackId, templateId) {
     const form = document.getElementById(formId);
     const feedback = document.getElementById(feedbackId);
@@ -163,6 +163,7 @@ function getBotResponse(message) {
     const lowerMsg = message.toLowerCase();
     if (lowerMsg.includes('ticket') || lowerMsg.includes('booking')) return 'Head to our Ticketing page to book your luxury flight!';
     if (lowerMsg.includes('destination')) return 'We offer flights to Santorini, Maldives, Serengeti, and more!';
-    if (lowerMsg.includes('help')) return 'I’m here to assist! Need help with booking?';
+    if (lowerMsg.includes('experience')) return 'Explore our Private Jet Escapes, Gourmet Getaways, and Wellness Retreats!';
+    if (lowerMsg.includes('help')) return 'I’m here to assist! Need help with booking or experiences?';
     return 'I’d love to help! Could you tell me more?';
 }
