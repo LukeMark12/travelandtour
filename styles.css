@@ -58,7 +58,7 @@ body {
 
 .hero {
     height: 100vh;
-    background: url('https://via.placeholder.com/1920x1080?text=Luxury+Travel') no-repeat center center/cover;
+    background: url('https://via.placeholder.com/1920x1080?text=Ticketing') no-repeat center center/cover;
     position: relative;
     display: flex;
     align-items: center;
@@ -78,7 +78,8 @@ body {
     color: #fff;
 }
 
-.hero-overlay, .experience-overlay {
+.hero-overlay,
+.experience-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -87,18 +88,21 @@ body {
     background: rgba(0, 0, 0, 0.5);
 }
 
-.hero-content, .experience-content {
+.hero-content,
+.experience-content {
     position: relative;
     z-index: 1;
 }
 
-.hero h1, .experience-hero h1 {
+.hero h1,
+.experience-hero h1 {
     font-size: 60px;
     margin-bottom: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
-.hero p, .experience-hero p {
+.hero p,
+.experience-hero p {
     font-size: 24px;
     margin-bottom: 30px;
 }
@@ -131,25 +135,18 @@ body {
     color: #1a1a1a;
 }
 
-.destination-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
 .destination-card {
-    background-color: #f9f9f9;
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white for contrast */
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s, box-shadow 0.3s;
+    color: #fff; /* Ensure base text color is white for readability */
 }
 
 .destination-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 12px rgba(212, 175, 55, 0.3);
 }
 
 .card-image {
@@ -163,12 +160,12 @@ body {
 .destination-card h3 {
     font-size: 24px;
     margin-bottom: 10px;
-    color: #1a1a1a;
+    color: #d4af37; /* Gold accent for destination name */
 }
 
 .destination-card p {
     font-size: 16px;
-    color: #666;
+    color: #866b66; /* Brighter off-white for better readability */
 }
 
 .card-link {
@@ -181,7 +178,7 @@ body {
 }
 
 .card-link:hover {
-    color: #b8932d;
+    color: #fff;
 }
 
 .highlights {
@@ -280,8 +277,136 @@ body {
 }
 
 .content {
-    min-height: calc(100vh - 100px);
+    min-height: 100vh;
     padding-bottom: 60px;
+    padding-top: 80px; /* Space for the fixed navbar */
+}
+
+.content-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+/* Contact Page Styles */
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-form-container,
+.contact-info-container {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-form {
+    max-width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.contact-form h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #d4af37;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #fff;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+    border-color: #d4af37;
+    outline: none;
+}
+
+textarea.form-input {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.feedback {
+    margin-top: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    min-height: 20px;
+    color: #fff;
+}
+
+.contact-card {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    border-radius: 10px;
+    color: #fff;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+.contact-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #d4af37;
+}
+
+.contact-card p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    color: #e0e0e0;
+}
+
+.contact-card a {
+    color: #d4af37;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-card a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.cta-text {
+    font-size: 1rem;
+    color: #d4af37;
+    margin-top: 1.5rem;
+    font-style: italic;
+}
+
+/* Ticketing Page Styles */
+.ticketing-info-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.ticketing-info-container .contact-card {
+    max-width: 600px;
 }
 
 /* New Chatbot Styles */
@@ -437,37 +562,6 @@ footer {
     }
 }
 
-/* Ticketing Form */
-.ticketing-form {
-    max-width: 600px;
-    margin: 40px auto;
-}
-
-.ticketing-form select, .ticketing-form input[type="date"] {
-    display: block;
-    width: 100%;
-    padding: 15px;
-    margin: 10px 0;
-    border: 1px solid #d4af37;
-    border-radius: 5px;
-    font-family: 'Montserrat', sans-serif;
-    background-color: #fff;
-}
-
-/* Contact Form */
-.contact-form {
-    max-width: 600px;
-    margin: 40px auto;
-}
-
-/* Feedback Styling */
-.feedback {
-    margin-top: 20px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    min-height: 20px;
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
     .navbar {
@@ -498,15 +592,18 @@ footer {
         text-align: center;
     }
 
-    .hero, .experience-hero {
+    .hero,
+    .experience-hero {
         height: 50vh;
     }
 
-    .hero h1, .experience-hero h1 {
+    .hero h1,
+    .experience-hero h1 {
         font-size: 36px;
     }
 
-    .hero p, .experience-hero p {
+    .hero p,
+    .experience-hero p {
         font-size: 16px;
     }
 
@@ -515,34 +612,56 @@ footer {
         font-size: 14px;
     }
 
-    .destination-grid, .highlight-grid, .experience-container {
-        grid-template-columns: 1fr;
+    .destination-grid,
+    .highlight-grid,
+    .experience-container,
+    .contact-container,
+    .ticketing-info-container {
+        flex-direction: column;
         gap: 20px;
     }
 
-    .destination-card, .highlight-card, .experience-item {
+    .destination-card,
+    .highlight-card,
+    .experience-item,
+    .contact-form-container,
+    .contact-info-container,
+    .ticketing-info-container .contact-card {
+        width: 100%;
         padding: 15px;
     }
 
-    .card-image, .experience-image {
+    .card-image,
+    .experience-image {
         height: 150px;
     }
 
-    .destination-card h3, .highlight-card h3, .experience-text h2 {
+    .destination-card h3,
+    .highlight-card h3,
+    .experience-text h2,
+    .contact-form h2,
+    .contact-card h2 {
         font-size: 20px;
     }
 
-    .destination-card p, .highlight-card p, .experience-text p {
+    .destination-card p,
+    .highlight-card p,
+    .experience-text p,
+    .contact-card p,
+    .cta-text {
         font-size: 14px;
     }
 
-    .ticketing-form, .contact-form {
-        max-width: 100%;
-        margin: 20px;
+    .content {
+        padding-top: 60px; /* Adjust for mobile navbar height */
     }
 
-    .ticketing-form select, .ticketing-form input[type="date"], .contact-form input, .contact-form textarea {
-        padding: 10px;
+    .contact-form {
+        padding: 1.5rem;
+    }
+
+    .form-input {
+        padding: 0.5rem;
         font-size: 14px;
     }
 
@@ -583,11 +702,15 @@ footer {
         padding: 0.4rem;
     }
 
-    .featured, .highlights, .experience-details {
+    .featured,
+    .highlights,
+    .experience-details {
         padding: 40px 10px;
     }
 
-    .featured h2, .highlights h2, .experience-details h2 {
+    .featured h2,
+    .highlights h2,
+    .experience-details h2 {
         font-size: 28px;
     }
 }

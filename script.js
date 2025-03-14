@@ -6,10 +6,10 @@ const translations = {
         destinationsOption: "What destinations do you offer?",
         experiencesOption: "Tell me about experiences",
         contactOption: "How can I contact support?",
-        ticketingResponse: "You can book a ticket on our Ticketing page. Just select your origin, destination, and date, and we’ll handle the rest!",
+        ticketingResponse: "To book a ticket, please reach out to our team via email at luxurytravelco@gmail.com, call us at +1-800-LUXURY, or visit us at 123 Elegance Avenue, Suite 500, New York, NY 10001, USA. We’ll provide a personalized booking experience!",
         destinationsResponse: "We offer luxury flights to Santorini, Maldives, Serengeti, Tokyo, and more! Check out our Destinations page for details.",
         experiencesResponse: "Explore Private Jet Escapes, Gourmet Getaways, and Wellness Retreats on our Experiences page. Each is crafted for ultimate luxury!",
-        contactResponse: "Reach us via our Contact page or call +1-800-LUXURY for support.",
+        contactResponse: "You can reach us via email at luxurytravelco@gmail.com, call us at +1-800-LUXURY, or visit our office at 123 Elegance Avenue, Suite 500, New York, NY 10001, USA.",
         typing: "Bot is typing...",
         defaultResponse: "I’m not sure what you mean. Please pick an option above!"
     },
@@ -19,10 +19,10 @@ const translations = {
         destinationsOption: "ဘယ်နေရာတွေကို သွားလို့ရလဲ။",
         experiencesOption: "အတွေ့အကြုံတွေအကြောင်းပြောပြပါ။",
         contactOption: "အကူအညီဘယ်လိုဆက်သွယ်ရမလဲ။",
-        ticketingResponse: "ကျွန်တော်တို့ရဲ့ Ticketing စာမျက်နှာမှာ လက်မှတ်ဝယ်နိုင်ပါတယ်။ သင့်ရဲ့ မူလနေရာ၊ သွားမယ့်နေရာနဲ့ ရက်စွဲကို ရွေးချယ်ရုံပါပဲ၊ ကျန်တာကို ကျွန်တော်တို့ စီစဉ်ပေးပါမယ်။",
+        ticketingResponse: "လက်မှတ်ဝယ်ယူရန် ကျွန်တော်တို့အဖွဲ့ကို အီးမေးလ် luxurytravelco@gmail.com သို့ ဆက်သွယ်ပါ၊ +1-800-LUXURY သို့ ဖုန်းခေါ်ပါ၊ သို့မဟုတ် 123 Elegance Avenue, Suite 500, New York, NY 10001, USA တွင် ကျွန်တော်တို့ကို လာရောက်ပါ။ ကျွန်တော်တို့က သင့်အား စိတ်ကြိုက်ဘွတ်ကင်အတွေ့အကြုံ ပေးပါမည်။",
         destinationsResponse: "ကျွန်တော်တို့မှာ Santorini၊ Maldives၊ Serengeti၊ Tokyo နဲ့ အခြားနေရာများသို့ ဇိမ်ခံလေယာဉ်ခရီးစဉ်တွေ ရှိပါတယ်။ Destinations စာမျက်နှာမှာ အသေးစိတ်ကြည့်ပါ။",
         experiencesResponse: "Private Jet Escapes၊ Gourmet Getaways နဲ့ Wellness Retreats တို့ကို Experiences စာမျက်နှာမှာ စူးစမ်းပါ။ တစ်ခုချင်းစီဟာ အဆင့်မြင့်ဇိမ်ခံမှုအတွက် ဖန်တီးထားပါတယ်။",
-        contactResponse: "Contact စာမျက်နှာကနေ ဆက်သွယ်နိုင်ပါတယ် ဒါမှမဟုတ် +1-800-LUXURY ကို ဖုန်းခေါ်ပါ။",
+        contactResponse: "ကျွန်တော်တို့ကို အီးမေးလ် luxurytravelco@gmail.com မှာ ဆက်သွယ်နိုင်ပါတယ်၊ +1-800-LUXURY ကို ဖုန်းခေါ်ပါ၊ သို့မဟုတ် ကျွန်တော်တို့ရုံးခန်းကို 123 Elegance Avenue, Suite 500, New York, NY 10001, USA မှာ လာရောက်ပါ။",
         typing: "ဘော့တ်က စာရိုက်နေပါတယ်...",
         defaultResponse: "ဘာကိုဆိုလိုမှန်း မသိပါဘူး။ အပေါ်က ရွေးချယ်စရာတစ်ခုကို ရွေးပါ။"
     }
@@ -30,16 +30,6 @@ const translations = {
 
 // Current Language
 let currentLanguage = 'en';
-
-// Function to Generate a Unique Booking Number
-function generateBookingNumber() {
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-    let bookingNumber = '';
-    for (let i = 0; i < 8; i++) {
-        bookingNumber += characters.charAt(Math.floor(Math.random() * characters.length));
-    }
-    return bookingNumber;
-}
 
 // Animations
 document.addEventListener('DOMContentLoaded', () => {
@@ -65,7 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
-    setupTicketingForm('ticketingForm', 'ticketingFeedback', 'template_os64tac');
     setupForm('contactForm', 'contactFeedback', 'template_os64tac');
 
     // Mobile Menu Toggle
@@ -79,72 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize Chatbot Language
     updateChatbotLanguage();
 });
-
-// Ticketing Form Setup
-function setupTicketingForm(formId, feedbackId, templateId) {
-    const form = document.getElementById(formId);
-    const feedback = document.getElementById(feedbackId);
-
-    if (form) {
-        const inputs = form.querySelectorAll('.form-input');
-        inputs.forEach(input => {
-            input.addEventListener('input', () => {
-                validateInput(input);
-            });
-        });
-
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const name = form.querySelector('#ticketName').value.trim();
-            const email = form.querySelector('#ticketEmail').value.trim();
-            const phone = form.querySelector('#ticketPhone').value.trim();
-            const origin = form.querySelector('#ticketOrigin').value;
-            const destination = form.querySelector('#ticketDestination').value;
-            const date = form.querySelector('#ticketDate').value;
-
-            if (validateTicketingForm(name, email, phone, origin, destination, date)) {
-                feedback.textContent = 'Processing your booking...';
-                feedback.style.color = '#d4af37';
-
-                // Generate a unique booking number
-                const bookingNumber = generateBookingNumber();
-
-                // Send email to customer
-                emailjs.send('service_jpmakbm', templateId, {
-                    from_name: name,
-                    reply_to: email,
-                    phone_number: phone,
-                    message: `Booking Request: Flight from ${origin} to ${destination} on ${date}. Your unique booking number is ${bookingNumber}.`
-                })
-                .then(() => {
-                    // Send email to admin
-                    emailjs.send('service_jpmakbm', templateId, {
-                        from_name: name,
-                        reply_to: "admin@luxurytravelco.com", // Replace with actual admin email
-                        phone_number: phone,
-                        message: `New Booking: Customer ${name} booked a flight from ${origin} to ${destination} on ${date}. Contact: ${email}, ${phone}. Unique booking number: ${bookingNumber}.`
-                    })
-                    .then(() => {
-                        feedback.textContent = `Thank you, ${name}! Your booking request for ${destination} on ${date} has been sent. Your unique booking number is ${bookingNumber}. Check ${email} or ${phone} for confirmation.`;
-                        feedback.style.color = '#d4af37';
-                        form.reset();
-                    }, (error) => {
-                        feedback.textContent = 'Oops! Something went wrong while notifying the admin. Check the console for details.';
-                        feedback.style.color = '#ff5555';
-                        console.error('Admin EmailJS Error:', error.text || error);
-                    });
-                }, (error) => {
-                    feedback.textContent = 'Oops! Something went wrong while sending your confirmation. Check the console for details.';
-                    feedback.style.color = '#ff5555';
-                    console.error('Customer EmailJS Error:', error.text || error);
-                });
-            } else {
-                feedback.textContent = 'Please fill out all fields correctly.';
-                feedback.style.color = '#ff5555';
-            }
-        });
-    }
-}
 
 // Contact Form Setup
 function setupForm(formId, feedbackId, templateId) {
@@ -200,17 +123,9 @@ function validateInput(input) {
     } else if (input.type === 'tel') {
         const phonePattern = /^\+?[\d\s-]{10,}$/;
         input.style.borderColor = phonePattern.test(input.value) ? '#d4af37' : '#ff5555';
-    } else if (input.tagName === 'SELECT') {
-        input.style.borderColor = input.value ? '#d4af37' : '#ff5555';
     } else {
         input.style.borderColor = input.value.trim() ? '#d4af37' : '#ff5555';
     }
-}
-
-function validateTicketingForm(name, email, phone, origin, destination, date) {
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const phonePattern = /^\+?[\d\s-]{10,}$/;
-    return name.length > 0 && emailPattern.test(email) && phonePattern.test(phone) && origin && destination && date;
 }
 
 function validateForm(name, email, phone, message) {
