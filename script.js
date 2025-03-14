@@ -6,12 +6,14 @@ const translations = {
         destinationsOption: "What destinations do you offer?",
         experiencesOption: "Tell me about experiences",
         contactOption: "How can I contact support?",
-        ticketingResponse: "To book a ticket, please reach out to our team via email at luxurytravelco@gmail.com, call us at +1-800-LUXURY, or visit us at 123 Elegance Avenue, Suite 500, New York, NY 10001, USA. We’ll provide a personalized booking experience!",
+        ticketingResponse: "To book a ticket, please contact us at luxurytravelco@gmail.com, +1-800-LUXURY, or visit No. 930 (B), U Lin Street, 42 Ward, North Dagon Township, Yangon. We’ll craft a personalized plan for you!",
         destinationsResponse: "We offer luxury flights to Santorini, Maldives, Serengeti, Tokyo, and more! Check out our Destinations page for details.",
         experiencesResponse: "Explore Private Jet Escapes, Gourmet Getaways, and Wellness Retreats on our Experiences page. Each is crafted for ultimate luxury!",
-        contactResponse: "You can reach us via email at luxurytravelco@gmail.com, call us at +1-800-LUXURY, or visit our office at 123 Elegance Avenue, Suite 500, New York, NY 10001, USA.",
+        contactResponse: "You can reach us via email at luxurytravelco@gmail.com, call us at +1-800-LUXURY, or visit our office at No. 930 (B), U Lin Street, 42 Ward, North Dagon Township, Yangon.",
         typing: "Bot is typing...",
-        defaultResponse: "I’m not sure what you mean. Please pick an option above!"
+        defaultResponse: "I’m not sure what you mean. Please pick an option above!",
+        ticketingFormSuccess: "Thank you! Your booking request has been sent. We’ll contact you soon at the provided details.",
+        ticketingFormError: "Oops! Something went wrong. Please try again or contact us directly."
     },
     my: {
         greeting: "မင်္ဂလာပါ။ သင့်ရဲ့ ဇိမ်ခံခရီးသွားလုပ်ငန်းအတွက် ကူညီပေးဖို့ ကျွန်တော်ရှိပါတယ်။ ဘာကူညီပေးရမလဲ။",
@@ -19,12 +21,14 @@ const translations = {
         destinationsOption: "ဘယ်နေရာတွေကို သွားလို့ရလဲ။",
         experiencesOption: "အတွေ့အကြုံတွေအကြောင်းပြောပြပါ။",
         contactOption: "အကူအညီဘယ်လိုဆက်သွယ်ရမလဲ။",
-        ticketingResponse: "လက်မှတ်ဝယ်ယူရန် ကျွန်တော်တို့အဖွဲ့ကို အီးမေးလ် luxurytravelco@gmail.com သို့ ဆက်သွယ်ပါ၊ +1-800-LUXURY သို့ ဖုန်းခေါ်ပါ၊ သို့မဟုတ် 123 Elegance Avenue, Suite 500, New York, NY 10001, USA တွင် ကျွန်တော်တို့ကို လာရောက်ပါ။ ကျွန်တော်တို့က သင့်အား စိတ်ကြိုက်ဘွတ်ကင်အတွေ့အကြုံ ပေးပါမည်။",
+        ticketingResponse: "လက်မှတ်ဝယ်ယူရန် luxurytravelco@gmail.com သို့ ဆက်သွယ်ပါ၊ +1-800-LUXURY ကို ဖုန်းခေါ်ပါ၊ သို့မဟုတ် No. 930 (B), U Lin Street, 42 Ward, North Dagon Township, Yangon သို့ လာရောက်ပါ။ ကျွန်တော်တို့သည် သင့်အတွက် စိတ်ကြိုက်ခရီးစီစဉ်ပေးပါမည်။",
         destinationsResponse: "ကျွန်တော်တို့မှာ Santorini၊ Maldives၊ Serengeti၊ Tokyo နဲ့ အခြားနေရာများသို့ ဇိမ်ခံလေယာဉ်ခရီးစဉ်တွေ ရှိပါတယ်။ Destinations စာမျက်နှာမှာ အသေးစိတ်ကြည့်ပါ။",
         experiencesResponse: "Private Jet Escapes၊ Gourmet Getaways နဲ့ Wellness Retreats တို့ကို Experiences စာမျက်နှာမှာ စူးစမ်းပါ။ တစ်ခုချင်းစီဟာ အဆင့်မြင့်ဇိမ်ခံမှုအတွက် ဖန်တီးထားပါတယ်။",
-        contactResponse: "ကျွန်တော်တို့ကို အီးမေးလ် luxurytravelco@gmail.com မှာ ဆက်သွယ်နိုင်ပါတယ်၊ +1-800-LUXURY ကို ဖုန်းခေါ်ပါ၊ သို့မဟုတ် ကျွန်တော်တို့ရုံးခန်းကို 123 Elegance Avenue, Suite 500, New York, NY 10001, USA မှာ လာရောက်ပါ။",
+        contactResponse: "ကျွန်တော်တို့ကို အီးမေးလ် luxurytravelco@gmail.com မှာ ဆက်သွယ်နိုင်ပါတယ်၊ +1-800-LUXURY ကို ဖုန်းခေါ်ပါ၊ သို့မဟုတ် ကျွန်တော်တို့ရုံးခန်းကို No. 930 (B), U Lin Street, 42 Ward, North Dagon Township, Yangon မှာ လာရောက်ပါ။",
         typing: "ဘော့တ်က စာရိုက်နေပါတယ်...",
-        defaultResponse: "ဘာကိုဆိုလိုမှန်း မသိပါဘူး။ အပေါ်က ရွေးချယ်စရာတစ်ခုကို ရွေးပါ။"
+        defaultResponse: "ဘာကိုဆိုလိုမှန်း မသိပါဘူး။ အပေါ်က ရွေးချယ်စရာတစ်ခုကို ရွေးပါ။",
+        ticketingFormSuccess: "ကျေးဇူးပြု၍ သင့်လက်မှတ်မှတ်တမ်းတောင်းဆိုမှုကို ပို့ပြီးပါသည်။ ကျွန်တော်တို့သည် သင့်ထံ ချက်ချင်းဆက်သွယ်ပါမည်။",
+        ticketingFormError: "အိုး။ တစ်ခုခုမမှန်ကန်ပါ။ ထပ်စမ်းပါ သို့မဟုတ် တိုက်ရိုက်ဆက်သွယ်ပါ။"
     }
 };
 
@@ -84,13 +88,13 @@ function setupForm(formId, feedbackId, templateId) {
 
         form.addEventListener('submit', (e) => {
             e.preventDefault();
-            const name = form.querySelector('#contactName').value.trim();
-            const email = form.querySelector('#contactEmail').value.trim();
-            const phone = form.querySelector('#contactPhone').value.trim();
-            const message = form.querySelector('#contactMessage').value.trim();
+            let name = form.querySelector('#contactName') ? form.querySelector('#contactName').value.trim() : '';
+            let email = form.querySelector('#contactEmail') ? form.querySelector('#contactEmail').value.trim() : '';
+            let phone = form.querySelector('#contactPhone') ? form.querySelector('#contactPhone').value.trim() : '';
+            let message = form.querySelector('#contactMessage') ? form.querySelector('#contactMessage').value.trim() : '';
 
             if (validateForm(name, email, phone, message)) {
-                feedback.textContent = 'Sending your message...';
+                feedback.textContent = 'Sending your request...';
                 feedback.style.color = '#d4af37';
 
                 emailjs.send('service_jpmakbm', templateId, {
